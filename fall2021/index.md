@@ -10,5 +10,5 @@ eleventyNavigation:
 list: f2021
 ---
 
-<img src="./../img/f21-ilift-logo.png" alt="Fall 2021 theme: I lift" class="f21-logo">
+<img src="/img/f21-ilift-logo.png" alt="Fall 2021 theme: I lift" class="f21-logo">
 <!-- ![img/f21-hackathon-logo.jpg](../../img/f21-ilift-logo.png "Fall 2021 theme: I lift") -->
