@@ -12,9 +12,12 @@ templateClass: tmpl-page
 <ul class="result-list">
   {% for item in results[list] %}
     <li class="media-box">
-      <a href="{{ item.team | url }}">
+      <a href="{{ item.team | slug }}">
         {{ item.team }}
-        </a>
+        </a> {% if item.topTen %}<i class='award'>⭐</i>{% endif %}
+        {% if item.award == 1 %}<i class='award'>🥇</i>{% endif %}
+        {% if item.award == 2 %}<i class='award'>🥈</i>{% endif %}
+        {% if item.award == 3 %}<i class='award'>🥉</i>{% endif %}
       </li>
     {% endfor %}
   </ul>

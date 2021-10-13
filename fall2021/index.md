@@ -6,7 +6,7 @@ tags:
   - Fall 2021
 eleventyNavigation:
   key: Fall 2021
-  order: 1
+  order: 2
 list: f2021
 ---
 

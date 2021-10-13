@@ -328,3 +328,7 @@ a[href].direct-link:focus:visited,
 .f21-logo {
   background-color: var(--f2021);
 }
+
+.award {
+  font-size: 2rem;
+}
