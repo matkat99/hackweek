@@ -14,10 +14,10 @@ templateClass: tmpl-page
     <li class="media-box">
       <a href="{{ item.team | slug }}">
         {{ item.team }}
-        </a> {% if item.topTen %}<i class='award'>⭐</i>{% endif %}
-        {% if item.award == 1 %}<i class='award'>🥇</i>{% endif %}
-        {% if item.award == 2 %}<i class='award'>🥈</i>{% endif %}
-        {% if item.award == 3 %}<i class='award'>🥉</i>{% endif %}
+        </a> {% if item.topTen %}<i class='award' title="Top 10">⭐</i>{% endif %}
+        {% if item.award == "Grand Prize" %}<i class='award'>🥇</i>
+        {% elif item.award  %}<i class='award'>🥈</i>{% endif %}
+
       </li>
     {% endfor %}
   </ul>
