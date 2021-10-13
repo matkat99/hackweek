@@ -1,11 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;400&display=swap");
 /* Colors */
 :root {
   --lightgray: #e0e0e0;
-  --gray: #C0C0C0;
+  --gray: #c0c0c0;
   --darkgray: #333;
-  --navy: #17050F;
-  --blue: #082840;
+  --navy: #17050f;
+  --blue: #056cb6;
+  --f2021: #c92436;
   --white: #fff;
+  --font-body: Garamond, -apple-system, system-ui, sans-serif;
+  --font-headline: "Titillium web";
 }
 
 /* Global stylesheet */
@@ -17,17 +21,30 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, system-ui, sans-serif;
+  font-family: var(--font-body);
   color: var(--darkgray);
   background-color: var(--white);
 }
+img {
+  max-width: 100%;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Titillium web";
+  text-transform: uppercase;
+}
+
 p:last-child {
   margin-bottom: 0;
 }
-p,
-.tmpl-post li,
-img {
-  max-width: 37.5em; /* 600px /16 */
+@media screen and (min-width: 40em) {
+  p,
+  .tmpl-post li,
+  img {
+    max-width: 37.5em; /* 600px /16 */
+  }
 }
 p,
 .tmpl-post li {
@@ -42,17 +59,45 @@ a[href]:visited {
 main {
   padding: 1rem;
 }
+main,
+.nav {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+}
 main :first-child {
   margin-top: 0;
 }
 header {
   border-bottom: 1px dashed var(--lightgray);
 }
+.branding {
+  width: 100vw;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--blue);
+  color: white;
+}
+.vertical-text {
+  /* writing-mode: vertical-lr;
+  text-orientation: upright;
+  letter-spacing: -14px; */
+  /*font-size: 3em;
+  margin-top: -0.5em; */
+}
+
 header:after {
   content: "";
   display: table;
   clear: both;
 }
+
+.logo {
+  max-width: 180px;
+}
+
 table {
   margin: 1em 0;
 }
@@ -63,7 +108,10 @@ table th {
 
 pre,
 code {
-  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono", "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono", "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L", "Courier New", Courier, monospace;
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
   line-height: 1.5;
 }
 pre {
@@ -82,7 +130,7 @@ pre {
   -ms-hyphens: none;
   hyphens: none;
   padding: 1em;
-  margin: .5em 0;
+  margin: 0.5em 0;
   background-color: #f6f6f6;
 }
 code {
@@ -110,7 +158,7 @@ code {
 }
 .highlight-line-active {
   background-color: #444;
-  background-color: hsla(0, 0%, 27%, .8);
+  background-color: hsla(0, 0%, 27%, 0.8);
 }
 .highlight-line-add {
   background-color: #45844b;
@@ -133,9 +181,10 @@ code {
 /* Nav */
 .nav {
   padding: 0;
+  padding-left: 1em;
   list-style: none;
-  float: left;
-  margin-left: 1em;
+  display: flex;
+  /* margin-left: 1em; */
 }
 .nav-item {
   display: inline-block;
@@ -156,18 +205,19 @@ code {
 }
 .postlist-item {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   align-items: baseline;
   counter-increment: start-from -1;
   line-height: 1.8;
 }
-.postlist-item:before {
+/* .postlist-item:before {
   display: inline-block;
   pointer-events: none;
   content: "" counter(start-from, decimal-leading-zero) ". ";
   line-height: 100%;
   text-align: right;
-}
+} */
 .postlist-date,
 .postlist-item:before {
   font-size: 0.8125em; /* 13px /16 */
@@ -177,8 +227,8 @@ code {
   word-spacing: -0.5px;
 }
 .postlist-link {
-  padding-left: .25em;
-  padding-right: .25em;
+  padding-left: 0.25em;
+  padding-right: 0.25em;
   text-underline-position: from-font;
   text-underline-offset: 0;
   text-decoration-thickness: 1px;
@@ -190,7 +240,6 @@ code {
   font-size: 1.1875em; /* 19px /16 */
   font-weight: 700;
 }
-
 
 /* Tags */
 .post-tag {
@@ -235,7 +284,7 @@ a[href].post-tag:focus {
   font-family: sans-serif;
   text-decoration: none;
   font-style: normal;
-  margin-left: .1em;
+  margin-left: 0.1em;
 }
 a[href].direct-link,
 a[href].direct-link:visited {
@@ -246,4 +295,36 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+.video-container {
+  position: relative;
+  overflow: hidden;
+  height: 0;
+  padding-bottom: calc(var(--aspect-ratio, 0.5625) * 100%);
+  margin: 0.5em 0;
+}
+.video-container iframe {
+  position: absolute;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.definition {
+  border-left: 4px solid var(--gray);
+  padding: 1em;
+}
+.definition p:first-child {
+  font-size: 2em;
+  margin-bottom: -0.5em;
+}
+.definition p > span {
+  font-size: 1rem;
+  color: var(--gray);
+}
+.f21-logo {
+  background-color: var(--f2021);
 }
