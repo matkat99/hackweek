@@ -1,6 +1,6 @@
 {
  "f2021": [
-    {"team": "The Boise Boys", "video": "//www.youtube.com/embed/nsdmD54Bsu4?wmode=transparent&modestbranding=1&autohide=1&showinfo=0&rel=0", "topTen": true, "award" : 1},
-    {"team": "Mirage", "video": "//www.youtube.com/embed/nsdmD54Bsu4?wmode=transparent&modestbranding=1&autohide=1&showinfo=0&rel=0", "topTen": false, "award" : 2}
+    {"team": "Team One", "video": "//www.youtube.com/embed/nsdmD54Bsu4?wmode=transparent&modestbranding=1&autohide=1&showinfo=0&rel=0", "topTen": true, "award" : 1},
+    {"team": "Team Two", "video": "//www.youtube.com/embed/nsdmD54Bsu4?wmode=transparent&modestbranding=1&autohide=1&showinfo=0&rel=0", "topTen": false, "award" : 2}
   ]
 }
