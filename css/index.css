@@ -341,3 +341,12 @@ a[href].direct-link:focus:visited,
 .award {
   font-size: 1.5rem;
 }
+@media screen and (min-width: 40em) {
+  .result-list {
+    column-count: 2;
+    /* max-height: 60vh; */
+  }
+}
+.result-list > li {
+  line-height: 1.6rem;
+}
