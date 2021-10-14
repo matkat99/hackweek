@@ -9,6 +9,11 @@
     "path": "/feed/feed.xml",
     "id": "https://byui-hackweek.netlify.app"
   },
+  "author": {
+    "name": "Faculty",
+    "email": "",
+    "url": ""
+  },
   "jsonfeed": {
     "path": "/feed/feed.json",
     "url": "https://byui-hackweek.netlify.app/feed/feed.json"
